@@ -72,4 +72,22 @@ INNER JOIN Cursos ON Cursos.id_curso = Inscripciones.id_curso
 ORDER BY nombre_curso;
 
 -- 2
+SELECT apellido, nombre, fecha_ins, nombre_curso 
+FROM Inscripciones
+INNER JOIN Personas ON Personas.dni = Inscripciones.dni
+INNER JOIN Cursos ON Cursos.id_curso = Inscripciones.id_curso
+WHERE nombre_curso = 'MY SQL';
+
+-- 3
+SELECT apellido,nombre,fecha_ins FROM Inscripciones
+INNER JOIN Personas ON Personas.dni = Inscripciones.dni
+INNER JOIN Cursos ON Cursos.id_curso = Inscripciones.id_curso
+WHERE fecha_ins = '2018-01-08';
+
+
+-- 4
+SELECT Cursos.nombre_curso, COUNT(Inscripciones.dni) AS cantidad_inscriptos
+FROM Inscripciones
+INNER JOIN Cursos ON Cursos.id_curso = Inscripciones.id_curso
+GROUP BY Cursos.nombre_curso; 
 
