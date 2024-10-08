@@ -57,4 +57,4 @@ Este repositorio contiene ejercicios, prácticas y proyectos relacionados con la
 #### Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más información.
 
 # 🚀 ¡Gracias por visitar el repositorio!
-#### Este README ahora incluye íconos y una estructura más detallad
+#### Este README ahora incluye íconos y una estructura más detallada
