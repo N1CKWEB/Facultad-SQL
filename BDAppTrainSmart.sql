@@ -8,22 +8,27 @@ CREATE TABLE clientes (
 
 SELECT * FROM Clientes;
 
-CREATE TABLE Entrenamiento_Realizado(
-	id_entrenamiento_Realizado SERIAL PRIMARY KEY,
-	tipo_de_ejercicio VARCHAR(20) NOT NULL,
-    musculo_trabajado VARCHAR(20) NOT NULL,
-	duracion de entrenamiento(20)  NOT NULL
-)
-CREATE TABLE Entrenamiento_Futuro(
-	id_entrenamiento_Futuro SERIAL PRIMARY KEY,
-	tipo_de_ejercicio VARCHAR(20) NOT NULL,
-    musculo_trabajado VARCHAR(20) NOT NULL,
-	duracion de entrenamiento(20)  NOT NULL
+
+CREATE TABLE Registrar_Entrenamiento_Realizado(
+    id_registrar_entrenamiento_realizado SERIAL PRIMARY KEY,
+    tipo_de_ejercicio VARCHAR(50),
+    grupo_muscular_trabajado VARCHAR(50),
+    duracion_del_entrenamiento VARCHAR(50) 
 );
-CREATE TABLE Seguimiento_Registrado_Anteriormente(
-	id_seguimiento_registrado_anteriormente SERIAL PRIMARY KEY,
-	tipo_de_ejercicio VARCHAR(20) NOT NULL,
-    musculo_trabajado VARCHAR(20) NOT NULL,
-	duracion de entrenamiento(20)  NOT NULL
+
+
+CREATE TABLE Registrar_Entrenamiento_Futuro(
+    id_registrar_entrenamiento_futuro SERIAL PRIMARY KEY,
+    tipo_de_ejercicio VARCHAR(50),
+    duracion_estimada_del_entrenamiento VARCHAR(50), 
+    objetivo_del_entrenamiento VARCHAR(50)
 );
+
+
+SELECT * FROM Registrar_Entrenamiento_Realizado;
+
+
+
+SELECT * FROM Registrar_Entrenamiento_Futuro;
+
 

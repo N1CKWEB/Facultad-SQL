@@ -12,7 +12,6 @@ CREATE TABLE Rugbiers (
 );
 
 
-
 INSERT INTO Rugbiers (apellido,nombre,edad,altura,peso,posicion,partidos,tackles) VALUES ('Gomez','Mariano','28','1.80','85','segunda','12','101');
 INSERT INTO Rugbiers (apellido,nombre,edad,altura,peso,posicion,partidos,tackles) VALUES ('Ramirez','Mariano','29','1.74','113','pilar','8','89');
 INSERT INTO Rugbiers (apellido,nombre,edad,altura,peso,posicion,partidos,tackles) VALUES ('Sanchez','Eugenio','27','1.73','110','hooker','8','121');
@@ -65,4 +64,3 @@ WHERE peso < 100;
 -- 11
 SELECT AVG(partidos) AS "Promedio de partidos de todos los pilares" FROM TPCO_8_PRACTICA
 WHERE posicion = 'pilar';
-
