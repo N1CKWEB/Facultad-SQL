@@ -45,3 +45,17 @@ VALUES
   (37000000, 'KOLMAN', 'PATRICIA', 24, 'HOUSAY 223', 5521),
   (38000000, 'JUAREZ', 'MONICA', 22, 'DR MORENO 695', 5539);
 
+
+
+-- 1
+
+SELECT dni,nombre,apellido,domicilio,nombre_localidad
+FROM Personas 
+INNER JOIN localicades ON localicades.cp = Personas.cp;
+
+
+-- 2
+SELECT nombre_localidad, COUNT(*) AS "cantidad_personas"
+FROM Personas
+INNER JOIN localicades ON localicades.cp = Personas.cp
+GROUP BY nombre_localidad; 
