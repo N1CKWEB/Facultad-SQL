@@ -52,3 +52,45 @@ ORDER BY Albumes.titulo;
  
 
 -- 2
+
+SELECT nombre_de_artista
+FROM artista_album
+INNER JOIN Artistas ON Artistas.id_artista = artista_album.id_artista
+INNER JOIN Albumes ON Albumes.id_album = artista_album.id_album
+WHERE titulo = 'Thriller';
+
+-- 3
+
+SELECT nombre_de_artista 
+FROM artista_album
+INNER JOIN Artistas ON Artistas.id_artista = artista_album.id_artista
+INNER JOIN Albumes ON Albumes.id_album = artista_album.id_album
+WHERE anio_lanzamiento = '1982-01-01';
+
+
+-- 4
+
+SELECT Albumes.titulo, COUNT(Artistas.nombre_de_artista) AS "Cantidad_de_Artistas"
+FROM artista_album
+INNER JOIN Albumes ON Albumes.id_album = artista_album.id_album
+INNER JOIN Artistas ON Artistas.id_artista = artista_album.id_artista
+GROUP BY Albumes.titulo;
+
+
+-- 5
+
+SELECT Albumes.titulo,COUNT(artista_album.id_artista) AS "Albumes que tienen mpas de un artista"
+FROM artista_album
+INNER JOIN Albumes ON Albumes.id_album = artista_album.id_album
+INNER JOIN Artistas ON Artistas.id_artista = artista_album.id_artista
+GROUP BY Albumes.titulo
+HAVING COUNT(artista_album.id_artista) > 1;
+
+
+-- 6
+
+SELECT Artistas.nombre_de_artista, COUNT(artista_album.id_album) AS "Cantidad_de_Albumes"
+FROM artista_album
+INNER JOIN Artistas ON Artistas.id_artista = artista_album.id_artista
+GROUP BY Artistas.nombre_de_artista
+HAVING COUNT(artista_album.id_album) > 2;
